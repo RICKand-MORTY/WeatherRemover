@@ -1,14 +1,16 @@
+import sys
+sys.path.append('../')
 import time
 import torch
 import argparse
 import torch.nn as nn
 from torch.utils.data import DataLoader
-from val_data_functions import ValData
-from metrics import calculate_psnr, calculate_ssim
+from utils.val_data_functions import ValData
+from utils.metrics import calculate_psnr, calculate_ssim
 import os
 import numpy as np
 import random
-from cmformer import CMFormer
+from model.cmformer import CMFormer
 import torchvision.utils as tvu
 import cv2
 
@@ -39,7 +41,7 @@ if seed is not None:
     print('Seed:\t{}'.format(seed))
 
 # --- Set category-specific hyper-parameters  --- #
-val_data_dir = '../TransWeather/data/snow100k/test_all/Snow100K-L/'
+val_data_dir = '../TransWeather/data/outdoor_rain/test/'
 
 # --- Gpu device --- #
 device_ids = [Id for Id in range(torch.cuda.device_count())]
@@ -66,7 +68,7 @@ total = sum([param.nelement() for param in net.parameters()])
 print("Number of parameter: %.2fM" % (total / 1e6))
 # --- Use the evaluation model in testing --- #
 net.eval()
-category = "snowtest100k"
+category = "outdoor_rain_test"
 
 if os.path.exists(args.save_place) == False:
     os.makedirs(args.save_place)

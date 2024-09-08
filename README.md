@@ -39,7 +39,7 @@ The file `train.txt` contains the relative paths of each image in the training s
 
 ## Document Introduction
 
-`cmformer.py`is where our model is located. `measure.py`is used for evaluation. `train_data_functions.py`and `val_data_functions.py`related to dataset processing. 
+`model/cmformer.py`is where our model is located. `test/measure.py`is used for evaluation. `utils/train_data_functions.py`and `utils/val_data_functions.py`related to dataset processing.  `test`directory is used to evaluate the model.
 
 ## Train
 
@@ -61,7 +61,7 @@ During the training process, the training is divided into several stages, each u
 
 ## Test
 
-Code files with filenames starting with `test` are used to evaluate various datasets. Modify the value of `val_data_dir` to the path of the test set, and then run the following command to perform the evaluation.
+Code files with filenames starting with `test` are used to evaluate various datasets in `test`diretory. Modify the value of `val_data_dir` to the path of the test set, and then run the following command to perform the evaluation.
 
 ```
 python test_outdoor_rain.py -save_place ./outdoor_rain -val_batch_size 1 -checkpoint path

@@ -1,14 +1,16 @@
+import sys
+sys.path.append('../')
 import time
 import torch
 import argparse
 import torch.nn as nn
 from torch.utils.data import DataLoader
-from val_data_functions import ValData
-from metrics import calculate_psnr, calculate_ssim
+from utils.val_data_functions import ValData
+from utils.metrics import calculate_psnr, calculate_ssim
 import os
 import numpy as np
 import random
-from cmformer import CMFormer
+from model.cmformer import CMFormer
 import torchvision.utils as tvu
 import cv2
 

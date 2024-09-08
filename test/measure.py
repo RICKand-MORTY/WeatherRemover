@@ -3,7 +3,7 @@ import sys
 sys.path.append('../')
 import os
 import cv2
-from metrics import calculate_psnr, calculate_ssim
+from utils.metrics import calculate_psnr, calculate_ssim
 
 def main():
     # Sample script to calculate PSNR and SSIM metrics from saved images in two directories

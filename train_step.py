@@ -4,15 +4,15 @@ import argparse
 import torch.nn as nn
 import torch.nn.functional as F
 from torch.utils.data import DataLoader
-from train_data_functions import TrainData
-from val_data_functions import ValData
-from metrics import calculate_psnr, calculate_ssim
+from utils.train_data_functions import TrainData
+from utils.val_data_functions import ValData
+from utils.metrics import calculate_psnr, calculate_ssim
 import os
 import numpy as np
 import random
 import torchvision.utils as tvu
 import cv2
-from cmformer import CMFormer
+from model.cmformer import CMFormer
 
 
 # --- Parse hyper-parameters  --- #
@@ -44,6 +44,9 @@ exp_name = args.exp_name
 num_epochs = args.num_epochs
 save_epoch = args.save_epoch
 
+#create directory to save checkpoints
+if not os.path.exists(exp_name):
+    os.makedirs(exp_name, exist_ok=True)
 
 def save_image(img, file_directory):
     if not os.path.exists(os.path.dirname(file_directory)):
