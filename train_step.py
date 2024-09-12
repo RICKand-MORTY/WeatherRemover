@@ -94,16 +94,13 @@ try:
     net.load_state_dict(torch.load(chk))
     print('--- weight loaded ---')
 except:
-    print('--- no weight loaded ---')
+    raise FileNotFoundError(f"The file at path '{chk}' does not exist.")
 
 
 # --- Load training data and validation/test data --- #
 
-### The following file should be placed inside the directory "./data/train/"
-
 labeled_name = 'train.txt'
 
-### The following files should be placed inside the directory "./data/test/"
 
 val_filename1 = 'test_all.txt'
 
@@ -111,8 +108,6 @@ val_filename1 = 'test_all.txt'
 lbl_train_data_loader = DataLoader(TrainData(crop_size, train_data_dir, labeled_name, random_flip=True, random_rotate=True), batch_size=train_batch_size,
                                    shuffle=True, num_workers=8)
 
-## Uncomment the other validation data loader to keep an eye on performance
-## but note that validating while training significantly increases the train time
 
 # val_data_loader = DataLoader(ValData(val_data_dir,val_filename), batch_size=val_batch_size, shuffle=False, num_workers=8)
 val_data_loader1 = DataLoader(ValData(val_data_dir, val_filename1), batch_size=val_batch_size, shuffle=False,
