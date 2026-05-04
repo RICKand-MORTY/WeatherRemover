@@ -6,6 +6,8 @@ Paper link:
 
 [WeatherRemover (Published)](https://ieeexplore.ieee.org/document/11247943)
 
+[Arxiv](https://arxiv.org/abs/2604.06623)
+
 ## Architecture
 
 ![Model Architecture](./figure/Backbone.png)
