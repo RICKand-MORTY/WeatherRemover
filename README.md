@@ -36,7 +36,7 @@ torchvision==0.15.1
 
 [RainDrop](https://github.com/rui1996/DeRaindrop)
 
-[Snow100K](https://sites.google.com/view/yunfuliu/desnownet)
+[Snow100K](https://sites.google.com/view/yunfuliu/desnownet): [Train](https://pan.baidu.com/s/1QsLfv55hFweywP4uASkTkg?pwd=wgku)(Extraction code:wgku) [Test](https://pan.baidu.com/s/17T_vc8IKw_7Yw6tsZxBhaw?pwd=8rt9)(Extraction code:8rt9)
 
 [Outdoor-Rain](https://github.com/liruoteng/HeavyRainRemoval)
 
